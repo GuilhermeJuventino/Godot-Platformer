@@ -26,11 +26,13 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -64.0
+offset_left = -120.0
 offset_top = 40.0
-offset_right = 73.0
+offset_right = 144.0
 offset_bottom = 88.0
 grow_horizontal = 2
+theme_override_colors/default_color = Color(0.380392, 0.811765, 0.521569, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Godot Platformer"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
