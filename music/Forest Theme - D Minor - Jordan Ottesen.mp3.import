@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://codcna50ipjyv"
+path="res://.godot/imported/Forest Theme - D Minor - Jordan Ottesen.mp3-36475fab9dda60003504d5cde8c2fee9.mp3str"
+
+[deps]
+
+source_file="res://music/Forest Theme - D Minor - Jordan Ottesen.mp3"
+dest_files=["res://.godot/imported/Forest Theme - D Minor - Jordan Ottesen.mp3-36475fab9dda60003504d5cde8c2fee9.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
