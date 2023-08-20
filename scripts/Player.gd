@@ -44,6 +44,11 @@ func handle_jump():
 		if Input.is_key_pressed(KEY_Z):
 			velocity.y = JUMP_FORCE
 			coyote_timer.stop()
+	
+	# Cutting the jump short after button is released (For variable jump height)
+	if !Input.is_key_pressed(KEY_Z) and velocity.y < 0:
+		velocity.y = 0
+	
 
 func handle_movement(direction):
 	if direction != 0:
