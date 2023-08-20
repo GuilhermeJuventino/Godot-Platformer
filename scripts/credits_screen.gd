@@ -1,8 +1,8 @@
 extends Control
 
 func _ready():
-	#MusicController.play("TitleScreen")
-	pass
+	MusicController.play("TitleScreen")
+	$MarginContainer/Back.grab_focus()
 
 func _on_back_pressed():
 	# Transitioning back to main menu

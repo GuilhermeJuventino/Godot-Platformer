@@ -2,6 +2,7 @@ extends Control
 
 func _ready():
 	MusicController.play("TitleScreen")
+	$MarginContainer/MainMenuButtons/Play.grab_focus()
 
 func _on_play_pressed():
 	# Transitioning to in-game scene

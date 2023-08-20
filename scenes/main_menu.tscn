@@ -52,6 +52,7 @@ theme_override_constants/separation = 9
 [node name="Play" type="Button" parent="MarginContainer/MainMenuButtons"]
 layout_mode = 2
 size_flags_vertical = 4
+focus_neighbor_top = NodePath("../Exit")
 text = "Play"
 
 [node name="Credits" type="Button" parent="MarginContainer/MainMenuButtons"]
@@ -60,6 +61,7 @@ text = "Credits"
 
 [node name="Exit" type="Button" parent="MarginContainer/MainMenuButtons"]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../Play")
 text = "Exit Game"
 
 [connection signal="pressed" from="MarginContainer/MainMenuButtons/Play" to="." method="_on_play_pressed"]
