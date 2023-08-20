@@ -1,5 +1,7 @@
 extends Control
 
+func _ready():
+	MusicController.play("TitleScreen")
 
 func _on_play_pressed():
 	# Transitioning to in-game scene

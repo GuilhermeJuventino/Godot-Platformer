@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://2wpef6xyfq2r"]
+
+[ext_resource type="Script" path="res://scripts/music_controller.gd" id="1_fjhbf"]
+[ext_resource type="AudioStream" uid="uid://cqnn8f1bnqd8s" path="res://music/Rainbow Lollipop.mp3" id="2_gofof"]
+[ext_resource type="AudioStream" uid="uid://b4q7cooa2y2xg" path="res://music/Delightful Stroll.mp3" id="3_vghb4"]
+
+[node name="MusicController" type="Node2D"]
+script = ExtResource("1_fjhbf")
+
+[node name="TitleScreen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_gofof")
+
+[node name="Level01" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vghb4")
