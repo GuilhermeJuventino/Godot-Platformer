@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b0cmd50p2pkxy"]
+[gd_scene load_steps=25 format=3 uid="uid://b0cmd50p2pkxy"]
 
 [ext_resource type="Texture2D" uid="uid://cybnqxso2b2mx" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_751ar"]
 [ext_resource type="Script" path="res://scripts/level_01.gd" id="1_77566"]
@@ -383,6 +383,12 @@ sources/2 = SubResource("TileSetAtlasSource_bvvyd")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hu76v"]
 size = Vector2(2328, 906)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6fl3"]
+size = Vector2(282, 1720)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mn3h"]
+size = Vector2(242, 1680)
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_77566")
 
@@ -479,5 +485,25 @@ script = ExtResource("12_ovxwg")
 position = Vector2(292, 443)
 shape = SubResource("RectangleShape2D_hu76v")
 debug_color = Color(0.67451, 0.34902, 0.92549, 0.419608)
+
+[node name="InvisibleWallLeft" type="StaticBody2D" parent="."]
+position = Vector2(-16, -512)
+collision_layer = 16384
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Collision" type="CollisionShape2D" parent="InvisibleWallLeft"]
+position = Vector2(-131, -60)
+shape = SubResource("RectangleShape2D_g6fl3")
+debug_color = Color(0.278431, 0.619608, 0.341176, 0.419608)
+
+[node name="InvisibleWallRight" type="StaticBody2D" parent="."]
+position = Vector2(1904, -512)
+collision_layer = 16384
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape2D" parent="InvisibleWallRight"]
+position = Vector2(111, -40)
+shape = SubResource("RectangleShape2D_7mn3h")
 
 [connection signal="body_entered" from="FallZone" to="FallZone" method="_on_body_entered"]
