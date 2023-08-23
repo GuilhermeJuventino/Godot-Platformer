@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b0cmd50p2pkxy"]
+[gd_scene load_steps=23 format=3 uid="uid://b0cmd50p2pkxy"]
 
 [ext_resource type="Texture2D" uid="uid://cybnqxso2b2mx" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_751ar"]
 [ext_resource type="Script" path="res://scripts/level_01.gd" id="1_77566"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bbrh6t642kj7r" path="res://actors/player.tscn" id="3_2pflj"]
 [ext_resource type="Texture2D" uid="uid://cdjkqxfhmamlq" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="5_eiqck"]
 [ext_resource type="Texture2D" uid="uid://efy5d55yssn2" path="res://assets/Seasonal Tilesets/5 - Misc. universal tiles/Water_frames (16 x 32).png" id="9_7608u"]
+[ext_resource type="Script" path="res://scripts/FallZone.gd" id="12_ovxwg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hjqwq"]
 shader = ExtResource("3_0a63u")
@@ -379,6 +380,9 @@ sources/0 = SubResource("TileSetAtlasSource_u6u2w")
 sources/1 = SubResource("TileSetAtlasSource_8ggjy")
 sources/2 = SubResource("TileSetAtlasSource_bvvyd")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hu76v"]
+size = Vector2(2328, 906)
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_77566")
 
@@ -465,3 +469,15 @@ layer_3/tile_data = PackedInt32Array(1048581, 65537, 5, 1048585, 65537, 5, 10485
 
 [node name="Player" parent="." instance=ExtResource("3_2pflj")]
 position = Vector2(280, 272)
+
+[node name="FallZone" type="Area2D" parent="."]
+position = Vector2(672, 296)
+collision_layer = 32768
+script = ExtResource("12_ovxwg")
+
+[node name="Collision" type="CollisionShape2D" parent="FallZone"]
+position = Vector2(292, 443)
+shape = SubResource("RectangleShape2D_hu76v")
+debug_color = Color(0.67451, 0.34902, 0.92549, 0.419608)
+
+[connection signal="body_entered" from="FallZone" to="FallZone" method="_on_body_entered"]
