@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b0cmd50p2pkxy"]
+[gd_scene load_steps=26 format=3 uid="uid://b0cmd50p2pkxy"]
 
 [ext_resource type="Texture2D" uid="uid://cybnqxso2b2mx" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_751ar"]
 [ext_resource type="Script" path="res://scripts/level_01.gd" id="1_77566"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bbrh6t642kj7r" path="res://actors/player.tscn" id="3_2pflj"]
 [ext_resource type="Texture2D" uid="uid://cdjkqxfhmamlq" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="5_eiqck"]
 [ext_resource type="Texture2D" uid="uid://efy5d55yssn2" path="res://assets/Seasonal Tilesets/5 - Misc. universal tiles/Water_frames (16 x 32).png" id="9_7608u"]
+[ext_resource type="PackedScene" uid="uid://b6kqn3efvy6c1" path="res://actors/octi.tscn" id="12_ga6v2"]
 [ext_resource type="Script" path="res://scripts/FallZone.gd" id="12_ovxwg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hjqwq"]
@@ -475,6 +476,9 @@ layer_3/tile_data = PackedInt32Array(1048581, 65537, 5, 1048585, 65537, 5, 10485
 
 [node name="Player" parent="." instance=ExtResource("3_2pflj")]
 position = Vector2(280, 272)
+
+[node name="Octi" parent="." instance=ExtResource("12_ga6v2")]
+position = Vector2(472, 264)
 
 [node name="FallZone" type="Area2D" parent="."]
 position = Vector2(672, 296)

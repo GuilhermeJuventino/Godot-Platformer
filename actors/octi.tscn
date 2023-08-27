@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6kqn3efvy6c1"]
+
+[ext_resource type="Texture2D" uid="uid://dhwntq402vd34" path="res://assets/Sprite Pack 2/3 - Octi/Idle_&_Movement (16 x 16).png" id="1_3fbs0"]
+[ext_resource type="Script" path="res://scripts/Octi.gd" id="1_mn50f"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u1fic"]
+radius = 6.0
+height = 12.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajc0l"]
+atlas = ExtResource("1_3fbs0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lxiy"]
+atlas = ExtResource("1_3fbs0")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_alynu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajc0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lxiy")
+}],
+"loop": true,
+"name": &"Running",
+"speed": 5.0
+}]
+
+[node name="Octi" type="CharacterBody2D"]
+position = Vector2(0, -8)
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_mn50f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_u1fic")
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_alynu")
+animation = &"Running"
+
+[node name="CollisionRayCast" type="RayCast2D" parent="."]
+position = Vector2(0, 5)
+target_position = Vector2(-7, 0)
+collision_mask = 6
