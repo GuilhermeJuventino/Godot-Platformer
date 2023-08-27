@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var SPEED = -0.500
+var SPEED = 700.0
 
 @onready var animation := $Animation as AnimatedSprite2D 
 @onready var ray_cast = $CollisionRayCast as RayCast2D
@@ -8,10 +8,12 @@ var SPEED = -0.500
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+var direction := -1
+
 func _physics_process(delta):
 	handle_gravity(delta)
 	handle_collision()
-	handle_movement()
+	handle_movement(delta)
 	handle_animations()
 
 	move_and_slide()
@@ -29,8 +31,8 @@ func handle_animations():
 		
 	animation.play("Running")
 
-func handle_movement():
-	velocity.x += SPEED
+func handle_movement(delta):
+	velocity.x = direction * SPEED * delta
 
 func handle_collision():
 	if ray_cast.is_colliding():

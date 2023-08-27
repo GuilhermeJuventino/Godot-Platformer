@@ -32,7 +32,7 @@ animations = [{
 [node name="Octi" type="CharacterBody2D"]
 position = Vector2(0, -8)
 collision_layer = 4
-collision_mask = 3
+collision_mask = 2
 script = ExtResource("1_mn50f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
